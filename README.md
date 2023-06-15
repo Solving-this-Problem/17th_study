@@ -2,11 +2,16 @@
 16주차 코딩테스트 준비
 
 [백준 문제집](https://www.acmicpc.net/workbook/view/15895)
-
+<br/><br/>
 # 임스와 함께하는 미니게임
-## [동우](./%EC%9E%84%EC%8A%A4%EC%99%80%20%ED%95%A8%EA%BB%98%ED%95%98%EB%8A%94%20%EB%AF%B8%EB%8B%88%EA%B2%8C%EC%9E%84/%EB%8F%99%EC%9A%B0.py)
+<details>
+<summary>접기/펼치기</summary>
+<div markdown="1">
+
+## [동우](./W%EC%9E%84%EC%8A%A4%EC%99%80%20%ED%95%A8%EA%BB%98%ED%95%98%EB%8A%94%20%EB%AF%B8%EB%8B%88%EA%B2%8C%EC%9E%84/%EB%8F%99%EC%9A%B0.py)
 ```py
 ```
+
 ## [민웅](./%EC%9E%84%EC%8A%A4%EC%99%80%20%ED%95%A8%EA%BB%98%ED%95%98%EB%8A%94%20%EB%AF%B8%EB%8B%88%EA%B2%8C%EC%9E%84/%EB%AF%BC%EC%9B%85.py)
 ```py
 ```
@@ -58,7 +63,16 @@ print(player_num if GameType == 'Y' else player_num//2 if GameType == 'F' else p
 ```py
 ```
 
+</div>
+</details>
+<br/><br/>
+
 # 에디터
+
+<details>
+<summary>접기/펼치기</summary>
+<div markdown="1">
+
 ## [동우](./%EC%97%90%EB%94%94%ED%84%B0/%EB%8F%99%EC%9A%B0.py)
 ```py
 ```
@@ -129,7 +143,18 @@ print("".join(str_stack)+"".join(stack[::-1]))
 ```py
 ```
 
+</div>
+</details>
+
+<br/><br/>
+
 # 공유기 설치
+
+<details>
+<summary>접기/펼치기</summary>
+<div markdown="1">
+
+
 ## [동우](./%EA%B3%B5%EC%9C%A0%EA%B8%B0%20%EC%84%A4%EC%B9%98/%EB%8F%99%EC%9A%B0.py)
 ```py
 ```
@@ -145,3 +170,6 @@ print("".join(str_stack)+"".join(stack[::-1]))
 ## [혜진](./%EA%B3%B5%EC%9C%A0%EA%B8%B0%20%EC%84%A4%EC%B9%98/%ED%98%9C%EC%A7%84.py)
 ```py
 ```
+
+</div>
+</details>
