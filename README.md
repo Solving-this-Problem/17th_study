@@ -14,6 +14,36 @@
 
 ## [민웅](./%EC%9E%84%EC%8A%A4%EC%99%80%20%ED%95%A8%EA%BB%98%ED%95%98%EB%8A%94%20%EB%AF%B8%EB%8B%88%EA%B2%8C%EC%9E%84/%EB%AF%BC%EC%9B%85.py)
 ```py
+# 25757_임스와 함께하는 미니게임_ImsMinigame
+import sys
+input = sys.stdin.readline
+
+games = {
+    'Y': 2,
+    'F': 3,
+    'O': 4
+}
+
+N, G = input().split()
+N = int(N)
+
+max_user = games[G]
+user_list = {}
+count = 1
+ans = 0
+
+for _ in range(N):
+    user = input()
+    if user in user_list.keys():
+        continue
+    else:
+        user_list[user] = 0
+        count += 1
+        if count == max_user:
+            ans += 1
+            count = 1
+
+print(ans)
 ```
 ## [서희](./%EC%9E%84%EC%8A%A4%EC%99%80%20%ED%95%A8%EA%BB%98%ED%95%98%EB%8A%94%20%EB%AF%B8%EB%8B%88%EA%B2%8C%EC%9E%84/%EC%84%9C%ED%9D%AC.py)
 ```py
@@ -78,6 +108,33 @@ print(player_num if GameType == 'Y' else player_num//2 if GameType == 'F' else p
 ```
 ## [민웅](./%EC%97%90%EB%94%94%ED%84%B0/%EB%AF%BC%EC%9B%85.py)
 ```py
+# 1406_에디터_Editor
+# insert, remove는 시간초과
+import sys
+from collections import deque
+input = sys.stdin.readline
+
+alpha1 = list(input().rstrip())
+alpha2 = deque()
+
+M = int(input())
+# idx = len(alpha1)
+
+for _ in range(M):
+    order, *new = input().split()
+    if order == 'P':
+        alpha1.append(new[0])
+    elif order == 'L':
+        if alpha1:
+            alpha2.appendleft(alpha1.pop())
+    elif order == 'D':
+        if alpha2:
+            alpha1.append(alpha2.popleft())
+    else:
+        if alpha1:
+            alpha1.pop()
+print(*alpha1, sep='', end='')
+print(*alpha2, sep='')
 ```
 ## [서희](./%EC%97%90%EB%94%94%ED%84%B0/%EC%84%9C%ED%9D%AC.py)
 ```py
@@ -160,6 +217,43 @@ print("".join(str_stack)+"".join(stack[::-1]))
 ```
 ## [민웅](./%EA%B3%B5%EC%9C%A0%EA%B8%B0%20%EC%84%A4%EC%B9%98/%EB%AF%BC%EC%9B%85.py)
 ```py
+# 2110_공유기설치_Install-router
+# 알고리즘 구분 참조했음
+import sys
+input = sys.stdin.readline
+
+N, C = map(int, input().rstrip().split())
+
+houses = []
+ans = 0
+for _ in range(N):
+    houses.append(int(input()))
+
+houses.sort()
+
+# 공유기가 2개면 무조건 정렬된 상태의 양 끝
+if C == 2:
+    ans = houses[N-1] - houses[0]
+# 3개 이상일 경우 가능한 최대 거리의 절반부터 이분탐색으로 원하는 공유기 개수만큼 설치가가능한지 판단
+else:
+    min_dis = 1
+    max_dis = houses[N-1] - houses[0]
+    while min_dis <= max_dis:
+        cnt = 0
+        router = houses[0]
+        mid = (min_dis + max_dis)//2
+
+        for i in range(1, N):
+            if houses[i]-mid >= router:
+                cnt += 1
+                router = houses[i]
+        if cnt >= C-1:
+            min_dis = mid + 1
+            ans = mid
+        else:
+            max_dis = mid - 1
+print(ans)
+
 ```
 ## [서희](./%EA%B3%B5%EC%9C%A0%EA%B8%B0%20%EC%84%A4%EC%B9%98/%EC%84%9C%ED%9D%AC.py)
 ```py
