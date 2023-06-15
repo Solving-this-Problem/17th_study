@@ -1,5 +1,7 @@
 # 16th_study
-16주차 스터디
+16주차 코딩테스트 준비
+
+[백준 문제집](https://www.acmicpc.net/workbook/view/15895)
 
 # 임스와 함께하는 미니게임
 ## [동우](./%EC%9E%84%EC%8A%A4%EC%99%80%20%ED%95%A8%EA%BB%98%ED%95%98%EB%8A%94%20%EB%AF%B8%EB%8B%88%EA%B2%8C%EC%9E%84/%EB%8F%99%EC%9A%B0.py)
