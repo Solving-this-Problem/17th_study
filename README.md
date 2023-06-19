@@ -161,6 +161,31 @@ for _ in range(M):
         cnt += 1
 print(''.join(s))
 
+# 민웅이형꺼 참고해서 풀었습니당
+import sys
+from collections import deque
+input = sys.stdin.readline
+
+s = list(input().strip())
+s_tmp = deque()
+
+M = int(input().strip())
+
+for _ in range(M):
+    order = input().strip()
+    if order == 'L':
+        if s:
+            s_tmp.appendleft(s.pop())
+    elif order == 'D':
+        if s_tmp:
+            s.append(s_tmp.popleft())
+    elif order == 'B':
+        if s:
+            s.pop()
+    else:
+        s.append(order[-1])
+print(''.join(s) + ''.join(s_tmp))
+
 ```
 ## [민웅](./%EC%97%90%EB%94%94%ED%84%B0/%EB%AF%BC%EC%9B%85.py)
 ```py
