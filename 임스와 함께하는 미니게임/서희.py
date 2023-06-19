@@ -5,7 +5,7 @@ N, G = input().split()
 player = [input() for _ in range(int(N))]
 player = list(set(player))	# set 중복 제거
 
-if G == 'Y' :	# 윷놀이
+if G == 'Y' :	# 만약 게임 종류가 'Y'(윷놀이)라면, print(len(player))를 실행하여 참가 가능한 게임 횟수(참가자 수)를 출력
     print(len(player))
 elif G == 'F' :	# 같은 그림 찾기
     print(len(player) // 2)
