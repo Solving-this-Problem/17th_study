@@ -10,6 +10,21 @@
 
 ## [동우](./W%EC%9E%84%EC%8A%A4%EC%99%80%20%ED%95%A8%EA%BB%98%ED%95%98%EB%8A%94%20%EB%AF%B8%EB%8B%88%EA%B2%8C%EC%9E%84/%EB%8F%99%EC%9A%B0.py)
 ```py
+N, G = input().split()
+
+n = int(N)
+players = set()
+for _ in range(n):
+    player = input()
+    players.add(player)
+
+if G == 'Y':
+    print(len(players))
+elif G == 'F':
+    print(len(players) // 2)
+else:
+    print(len(players) // 3)
+
 ```
 
 ## [민웅](./%EC%9E%84%EC%8A%A4%EC%99%80%20%ED%95%A8%EA%BB%98%ED%95%98%EB%8A%94%20%EB%AF%B8%EB%8B%88%EA%B2%8C%EC%9E%84/%EB%AF%BC%EC%9B%85.py)
