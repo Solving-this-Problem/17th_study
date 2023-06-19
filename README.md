@@ -120,6 +120,47 @@ print(player_num if GameType == 'Y' else player_num//2 if GameType == 'F' else p
 
 ## [동우](./%EC%97%90%EB%94%94%ED%84%B0/%EB%8F%99%EC%9A%B0.py)
 ```py
+# 어디가 틀린지 모르겠음 ㅠㅠ
+import sys
+
+
+def L():
+    global cnt
+    if cnt != 0:
+        cnt -= 1
+
+
+def D():
+    global cnt
+    if cnt != len(s):
+        cnt += 1
+
+
+def B():
+    global cnt
+    if len(s) != 0:
+        for _ in range(cnt):
+            s.pop(0)
+            cnt = len(s)
+
+
+s = list(sys.stdin.readline().strip())
+M = int(sys.stdin.readline().strip())
+
+cnt = len(s)
+for _ in range(M):
+    order = sys.stdin.readline().strip()
+    if order == 'L':
+        L()
+    elif order == 'D':
+        D()
+    elif order == 'B':
+        B()
+    else:
+        s.insert(cnt, order[-1])
+        cnt += 1
+print(''.join(s))
+
 ```
 ## [민웅](./%EC%97%90%EB%94%94%ED%84%B0/%EB%AF%BC%EC%9B%85.py)
 ```py
