@@ -62,6 +62,19 @@ print(ans)
 ```
 ## [서희](./%EC%9E%84%EC%8A%A4%EC%99%80%20%ED%95%A8%EA%BB%98%ED%95%98%EB%8A%94%20%EB%AF%B8%EB%8B%88%EA%B2%8C%EC%9E%84/%EC%84%9C%ED%9D%AC.py)
 ```py
+import sys
+input = sys.stdin.readline
+
+N, G = input().split()
+player = [input() for _ in range(int(N))]
+player = list(set(player))	# set 중복 제거
+
+if G == 'Y' :	# 만약 게임 종류가 'Y'(윷놀이)라면, print(len(player))를 실행하여 참가 가능한 게임 횟수(참가자 수)를 출력
+    print(len(player))
+elif G == 'F' :	# 같은 그림 찾기
+    print(len(player) // 2)
+elif G == 'O' :	# 원카드
+    print(len(player) // 3)
 ```
 ## [성구](./%EC%9E%84%EC%8A%A4%EC%99%80%20%ED%95%A8%EA%BB%98%ED%95%98%EB%8A%94%20%EB%AF%B8%EB%8B%88%EA%B2%8C%EC%9E%84/%EC%84%B1%EA%B5%AC.py)
 ```py
@@ -219,6 +232,28 @@ print(*alpha2, sep='')
 ```
 ## [서희](./%EC%97%90%EB%94%94%ED%84%B0/%EC%84%9C%ED%9D%AC.py)
 ```py
+import sys
+from collections import deque
+
+S = list(sys.stdin.readline().strip())
+C = int(sys.stdin.readline().strip())
+
+left = deque(S) # 모든 문자들이 커서의 왼쪽에 있으므로, 모든 문자들이 왼쪽 스택에 저장
+right = deque()
+
+for _ in range(C):
+    c = sys.stdin.readline().split()
+
+    if c[0] == 'L' and left:
+        right.appendleft(left.pop())
+    elif c[0] == 'D' and right:
+        left.append(right.popleft())
+    elif c[0] == 'B' and left:
+        left.pop()
+    elif c[0] == 'P':
+        left.append(c[1])
+
+print(''.join(left + right))
 ```
 ## [성구](./%EC%97%90%EB%94%94%ED%84%B0/%EC%84%B1%EA%B5%AC.py)
 ```py
