@@ -119,6 +119,13 @@ print(player_num if GameType == 'Y' else player_num//2 if GameType == 'F' else p
 ```
 ## [혜진](./%EC%9E%84%EC%8A%A4%EC%99%80%20%ED%95%A8%EA%BB%98%ED%95%98%EB%8A%94%20%EB%AF%B8%EB%8B%88%EA%B2%8C%EC%9E%84/%ED%98%9C%EC%A7%84.py)
 ```py
+# 25757 임스와 함께하는 미니게임
+game_list = {'Y':1, 'F':2, 'O':3}
+num, game = map(str, input().split())
+names = [input() for _ in range(int(num))]
+players = set(names)
+    
+print(len(players) // game_list[game])
 ```
 
 </div>
@@ -314,6 +321,40 @@ print("".join(str_stack)+"".join(stack[::-1]))
 ```
 ## [혜진](./%EC%97%90%EB%94%94%ED%84%B0/%ED%98%9C%EC%A7%84.py)
 ```py
+1406 에디터
+from collections import deque
+import sys
+
+string = deque(sys.stdin.readline().strip())
+cursor = len(string)
+T = int(sys.stdin.readline())
+for _ in range(T):
+    order = sys.stdin.readline().strip()
+    if order[0] == 'L':
+        if cursor != 0:
+            cursor -= 1
+    elif order[0] == 'D':
+        if cursor != len(string):
+            cursor += 1
+    elif order[0] == 'B':
+        if cursor == len(string):
+            string.pop()
+            cursor -= 1
+        elif cursor != 0:
+            string.rotate(-(cursor-1))
+            string.popleft()
+            string.rotate(cursor - 1)
+            cursor -= 1
+    elif order[0] == 'P':
+        if cursor == len(string):
+            string.append(order[-1])
+            cursor += 1
+        else:
+            string.rotate(-cursor)
+            string.appendleft(order[-1])
+            string.rotate(cursor)
+            cursor += 1
+print(''.join(string))
 ```
 
 </div>
